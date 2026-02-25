@@ -10,7 +10,7 @@ namespace MvcCoreCryptography.Helpers
             string contenido = password + salt;
             SHA512 managed = SHA512.Create();
             byte[] salida = Encoding.UTF8.GetBytes(contenido);
-            for(int i=0; i<=20; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 salida = managed.ComputeHash(salida);
             }

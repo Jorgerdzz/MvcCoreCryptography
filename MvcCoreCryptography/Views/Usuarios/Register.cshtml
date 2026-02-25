@@ -35,6 +35,11 @@
     </div>
 </div>
 
+@if(Model != null)
+{
+   <h2>@ViewData["MENSAJE"]</h2>
+}
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

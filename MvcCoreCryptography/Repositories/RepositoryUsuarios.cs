@@ -31,8 +31,8 @@ namespace MvcCoreCryptography.Repositories
             Usuario user = new Usuario();
             user.IdUsuario = await this.GetMaxIdUsuariosAsync();
             user.Nombre = nombre;
-            user.Email = email;
             user.Imagen = imagen;
+            user.Email = email;
             //CADA USUARIO TENDRA UN SALT DIFERENTE
             user.Salt = HelperTools.GenerateSalt();
             user.Password = HelperCryptography.EncryptPassword(password, user.Salt);

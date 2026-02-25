@@ -26,6 +26,12 @@ namespace MvcCoreCryptography.Controllers
             return View();
         }
 
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> LogIn(string email, string password)
         {
             Usuario user = await this.repo.LogInUserAsync(email, password);

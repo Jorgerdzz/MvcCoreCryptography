@@ -4,13 +4,13 @@ namespace MvcCoreCryptography.Helpers
 {
     public class HelperTools
     {
-        //IMPORTANTE, NUESTRO SALT DEBE SER EXACTO AL TAMAÑO
-        //DEL CAMPO DE LA BBDD
+        //IMPORTANTE, NUESTRO SALT DEBE SER EXACTO AL TAMAÑO 
+        //DEL CAMPO DE LA BBDD 
         public static string GenerateSalt()
         {
             Random random = new Random();
             string salt = "";
-            for(int i=0; i<=50; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 int num = random.Next(1, 255);
                 char letra = Convert.ToChar(num);
@@ -22,16 +22,16 @@ namespace MvcCoreCryptography.Helpers
         public static bool CompareArrays(byte[] a, byte[] b)
         {
             bool iguales = true;
-            if(a.Length != b.Length)
+            if (a.Length != b.Length)
             {
                 iguales = false;
             }
             else
             {
-                //COMPARAMOS BYTE A BYTE
-                for(int i=0; i < a.Length; i++)
+                //COMPARAMOS BYTE A BYTE 
+                for (int i = 0; i < a.Length; i++)
                 {
-                    if (a[i].Equals(b[i]))
+                    if (a[i].Equals(b[i]) == false)
                     {
                         iguales = false;
                         break;
